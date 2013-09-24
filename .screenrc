@@ -1,0 +1,11 @@
+encoding UTF-8
+
+defscrollback 50000
+startup_message off
+altscreen on
+term xterm-color
+
+escape ^Zz
+
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W} %n %t %?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{W} %c %{g}]'
