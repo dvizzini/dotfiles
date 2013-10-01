@@ -1,6 +1,5 @@
 [user]
   name = Daniel Vizzini
-  email = dvizzini@ebay.com                                                                                                                                                                                       
 [alias]
   #courtesy of Trey and https://gist.github.com/tlberglund/3208656
 	lg = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
