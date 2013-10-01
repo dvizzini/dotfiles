@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/dvizzini/git/shared_aspects/out/clk_Users-dvizzini-Downloads-sample3_2012-07-02-sojourner'
-let g:netrw_dirhist_2='/Users/dvizzini/git/shared_aspects/out/clk_Users-dvizzini-Downloads-sample3_2012-07-02-sojourner_filtered'
-let g:netrw_dirhist_3='/Users/dvizzini/git/merch-analytics/out/counts_Users-dvizzini-Downloads-sample3_2012-07-02-sojourner_discrete_jaccard'
-let g:netrw_dirhist_4='/Users/dvizzini/git/merch-analytics/out'
-let g:netrw_dirhist_5='/Users/dvizzini/git/mbe/MerchBackend'
-let g:netrw_dirhist_6='/Users/dvizzini/git/scalding/scalding-core'
-let g:netrw_dirhist_7='/Users/dvizzini/sampled/sys/edw/dw_checkout_trans/snapshot/2013/09/01/00'
