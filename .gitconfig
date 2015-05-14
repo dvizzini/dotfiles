@@ -1,9 +1,12 @@
 [user]
   name = Daniel Vizzini
+  email = dvizzini@contextrelevant.com
 [alias]
   #courtesy of Trey and https://gist.github.com/tlberglund/3208656
 	lg = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   glol = log --all --color --graph --pretty=format:'%Cred%h%Creset%x09%C(yellow)%d%Creset %s %C(cyan)(%cr) %C(blue)[%an]%Creset' --abbrev-commit 
   df = diff --color-words
 [color]
-  ui = true
+    ui = true
+[core]
+    autocrlf = false
