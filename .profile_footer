@@ -1,13 +1,8 @@
-export PIG_OPTS="$PIG_OPTS -Djava.library.path=/usr/lib/hadoop/lib/native/Linux-amd64-64 -Dmapred.job.queue.name=hdmi-set -Dmapred.child.java.opts=-Xmx2048m -Dmapred.task.timeout=0"
-export HIVE_OPTS="$HIVE_OPTS -hiveconf mapred.job.queue.name=hdmi-set"
-export HIVE_AUX_JARS_PATH=/home/hadoop/lib/HiveUDF.jar
-export JAVA_HOME="/usr/java/jdk1.6.0_16/"
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+        . "$HOME/.bashrc"
     fi
 fi
 
@@ -16,9 +11,12 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-if [ -f ~/.bash_profile ]; then
-    . ~/.bash_profile
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
 fi
+
+#COLOR
+eval $(dircolors -b $HOME/.dircolors)
 
 # User specific environment and startup programs
 if [ -d "$HOME/bin" ]; then
@@ -49,23 +47,10 @@ do
   fi
 done
 
-#localize python variables
-if [ -d "python/current" ]; then
-  export PREFIX_PATH="`pwd`/python/current"
-  export PYTHONPATH=$PREFIX_PATH/lib/python2.7/site-packages
-  alias pip_install="pip install --install-option=\"--prefix=$PREFIX_PATH\""
-fi
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-
 # User specific aliases and functions
 
 #GENERAL
-alias lsl="ls -la --color"
-alias hls="hadoop fs -ls"
+alias ll="ls -la --color"
 
 #BASH HISTORY MODS
 export HISTCONTROL=erasedups
@@ -74,11 +59,3 @@ shopt -s histappend
 
 #PREVENT OBSENETIES
 set -o noclobber
-
-#virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
-
-#COLOR
-eval $(dircolors -b $HOME/.dircolors)

@@ -67,7 +67,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set ai
-"set textwidth=79
+set textwidth=80
 set comments=b:#
 
 " jump to the beginning and end of functions
