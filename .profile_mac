@@ -1,0 +1,7 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# To line up with linux
+alias ll="ls -laF

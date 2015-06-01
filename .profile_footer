@@ -1,27 +1,3 @@
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-        . "$HOME/.bashrc"
-    fi
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-
-#COLOR
-eval $(dircolors -b $HOME/.dircolors)
-
-# User specific environment and startup programs
-if [ -d "$HOME/bin" ]; then
-  export PATH=$HOME/bin:$PATH
-fi
 
 # money adddition from Volkan
 for i in `ls $HOME`
@@ -48,9 +24,6 @@ do
 done
 
 # User specific aliases and functions
-
-#GENERAL
-alias ll="ls -la --color"
 
 #BASH HISTORY MODS
 export HISTCONTROL=erasedups
