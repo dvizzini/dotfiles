@@ -1,4 +1,9 @@
 
+# source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
 # money adddition from Volkan
 for i in `ls $HOME`
 do

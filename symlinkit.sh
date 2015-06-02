@@ -11,24 +11,25 @@ if [ "$2" = "mac" ]
 then
     cat .mac_profile .profile_footer > ~/.profile
 else
-    cp .linux_profile .profile_footer > ~/.profile
-    ln -sn $PWD/.dircolors ~/.dircolors
-    ln -sn $PWD/.gitignore_global ~/.gitignore_global
+    cat .linux_profile .profile_footer > ~/.profile
+    [ -f ~/.dircolors ] && ln -sn $PWD/.dircolors ~/.dircolors
 fi
 
 echo "export PS1=\"\e[01;32m\]$1:\[\e[01;34m\]\w\[\e[01;35m\]\[\033[00m\] $ \"" >> ~/.profile
 
-ln -sn $PWD/.vim ~/.vim
-ln -sn $PWD/.vimrc ~/.vimrc
-ln -sn $PWD/.screenrc ~/.screenrc
+[ -f ~/.vim ] && ln -sn $PWD/.vim ~/.vim
+[ -f ~/.vimrc ] && ln -sn $PWD/.vimrc ~/.vimrc
+[ -f ~/.gitignore_global ] && ln -sn $PWD/.gitignore_global ~/.gitignore_global
+[ -f ~/.screenrc ] && ln -sn $PWD/.screenrc ~/.screenrc
 
 #git config
 git config --global core.autocrlf false
 git config --global user.name "Daniel Vizzini"
 git config --global user.email dvizzini@contextrelevant.com
-git config --global core.excludesfile .gitignore_global
+git config --global core.excludesfile "~/.gitignore_global"
 git config --global alias.lg "log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 git config --global alias.glol "log --all --color --graph --pretty=format:'%Cred%h%Creset%x09%C(yellow)%d%Creset %s %C(cyan)(%cr) %C(blue)[%an]%Creset' --abbrev-commit"
-git config --global color.ui "diff --color-words"
+git config --global alias.df "diff --color-words"
+git config --global color.ui "true"
 
 echo "Be sure to run \`. ~/.profile\` from your shell." 1>&2
