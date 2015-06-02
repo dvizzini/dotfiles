@@ -6,4 +6,4 @@
 #fi
 
 # To line up with linux
-alias ll="ls -laF
+alias ll="ls -laF"
