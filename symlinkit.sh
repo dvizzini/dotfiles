@@ -12,15 +12,15 @@ then
     cat .profile_mac .profile_footer > ~/.profile
 else
     cat .profile_linux .profile_footer > ~/.profile
-    [ -f ~/.dircolors ] && ln -sn $PWD/.dircolors ~/.dircolors
+    [ ! -f ~/.dircolors ] && ln -sn $PWD/.dircolors ~/.dircolors
 fi
 
 echo "export PS1=\"\e[01;32m\]$1:\[\e[01;34m\]\w\[\e[01;35m\]\[\033[00m\] $ \"" >> ~/.profile
 
-[ -f ~/.vim ] && ln -sn $PWD/.vim ~/.vim
-[ -f ~/.vimrc ] && ln -sn $PWD/.vimrc ~/.vimrc
-[ -f ~/.gitignore_global ] && ln -sn $PWD/.gitignore_global ~/.gitignore_global
-[ -f ~/.screenrc ] && ln -sn $PWD/.screenrc ~/.screenrc
+[ ! -f ~/.vim ] && ln -sn $PWD/.vim ~/.vim
+[ ! -f ~/.vimrc ] && ln -sn $PWD/.vimrc ~/.vimrc
+[ ! -f ~/.gitignore_global ] && ln -sn $PWD/.gitignore_global ~/.gitignore_global
+[ ! -f ~/.screenrc ] && ln -sn $PWD/.screenrc ~/.screenrc
 
 #git config
 git config --global core.autocrlf false
