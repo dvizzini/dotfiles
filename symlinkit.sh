@@ -9,9 +9,9 @@ fi
 
 if [ "$2" = "mac" ]
 then
-    cat .profile_mac .profile_footer > ~/.profile
+    cat .profile_header .profile_mac > ~/.profile
 else
-    cat .profile_linux .profile_footer > ~/.profile
+    cat .profile_header .profile_linux > ~/.profile
     [ ! -f ~/.dircolors ] && ln -sn $PWD/.dircolors ~/.dircolors
 fi
 
