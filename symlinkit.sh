@@ -21,6 +21,7 @@ echo "export PS1=\"\e[01;32m\]$1:\[\e[01;34m\]\w\[\e[01;35m\]\[\033[00m\] $ \"" 
 [ ! -f ~/.vimrc ] && ln -sn $PWD/.vimrc ~/.vimrc
 [ ! -f ~/.gitignore_global ] && ln -sn $PWD/.gitignore_global ~/.gitignore_global
 [ ! -f ~/.screenrc ] && ln -sn $PWD/.screenrc ~/.screenrc
+[ ! -f ~/.bash_aliases ] && ln -sn $PWD/.bash_aliases ~/.bash_aliases
 
 #git config
 git config --global core.autocrlf false
