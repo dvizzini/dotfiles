@@ -1,6 +1,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" call pathogen
+call pathogen#infect()
+
 " Open and close the NERDTree
 map <F10> :NERDTreeToggle<CR>
 map <F11> :NERDTreeClose<CR>
@@ -59,7 +62,7 @@ let maplocalleader=','        " all my shortcuts start with ,
 set whichwrap+=<,>,h,l        " backspaces and cursor keys wrap to
 set visualbell t_vb=          " Disable ALL bells
 set cursorline                " show the cursor line
-"set list                      " show whitespace where I care"
+"set list                      " show whitespace where I care
 set matchpairs+=<:>           " add < and > to match pairs
 
 "don't use the backup files or swap files, they are annoying to look at
