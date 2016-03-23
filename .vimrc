@@ -267,16 +267,13 @@ let g:ConqueTerm_TERM = 'xterm'
 " Tagbar plugin
 nnoremap <silent> <LocalLeader>f :TagbarToggle<CR>
 
-" Command-T plugin
-set wildignore+=*.o,*.so,*.6,*.pyc,build,vendor,tmp
-nnoremap <silent> <LocalLeader>t :execute "CommandT " . b:gitroot<CR>
-nnoremap <silent> <LocalLeader>b :CommandTBuffer<CR>
-" control+/ shows up in the terminal as ^_, so map C-_ to make it happen.
-nnoremap <silent> <C-_> :execute "CommandT " . b:gitroot<CR>
-
 " change tab completion to ctrl-space
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 
 " show line numbers
 set number
+
+" Disable the one PEP8 rule that should not be
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501,E225'
