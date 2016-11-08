@@ -7,3 +7,6 @@
 
 # To line up with linux
 alias ll="ls -laF"
+
+# free up ^s
+stty -ixon
