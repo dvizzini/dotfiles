@@ -39,6 +39,8 @@ then
     # get brew
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     sudo easy_install pip
+    brew install coreutils
+
 else
     sudo apt-get -y install python-pip
 fi
