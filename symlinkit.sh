@@ -10,6 +10,9 @@ fi
 if [ "$2" = "mac" ]
 then
     cat .profile_header .profile_mac > ~/.profile
+
+    # tac all day every day
+    ln -s /usr/local/bin/gtac /usr/local/bin/tac
 else
     cat .profile_header .profile_linux > ~/.profile
     [ ! -f ~/.dircolors ] && ln -sn $PWD/.dircolors ~/.dircolors
@@ -22,6 +25,11 @@ echo "export PS1=\"\e[01;32m\]$1:\[\e[01;34m\]\w\[\e[01;35m\]\[\033[00m\] $ \"" 
 [ ! -f ~/.gitignore_global ] && ln -sn $PWD/.gitignore_global ~/.gitignore_global
 [ ! -f ~/.screenrc ] && ln -sn $PWD/.screenrc ~/.screenrc
 [ ! -f ~/.bash_aliases ] && ln -sn $PWD/.bash_aliases ~/.bash_aliases
+
+mkdir -p $HOME/bin
+for file in $(ls $PWD/bin); do
+    [ ! -f ~/bin/$file ] && ln -sn $PWD/bin/$file ~/bin/
+done
 
 # git config
 git config --global core.autocrlf false
