@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "enter 'r' to run until an exception"
+python -m pdb $1
