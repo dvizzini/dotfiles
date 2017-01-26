@@ -48,12 +48,18 @@ then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     sudo easy_install pip
     brew install coreutils
+    brew install wget
 
 else
     sudo apt-get -y install python-pip
+    sudo apt-get -y install wget
 fi
 
 # get flake8 for sytastic
 sudo pip install flake8
+
+# git auto-complete
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+mv git-completion.bash ~
 
 echo "Be sure to run \`. ~/.profile\` from your shell." 1>&2
