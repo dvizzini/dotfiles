@@ -44,10 +44,10 @@ set nocompatible              " vim, not vi
 set autoindent 
 set nosmartindent    " auto/smart indent
 set expandtab                 " expand tabs to spaces (except java, see autocmd below)
-set softtabstop=4
+set softtabstop=2
 set smarttab                  " tab and backspace are smart
-set tabstop=4                 " 4 spaces
-set shiftwidth=4              " shift width
+set tabstop=2                 " 2 spaces
+set shiftwidth=2              " shift width
 set backspace=indent,eol,start  " backspace over all kinds of things
 set showfulltag               " show full completion tags
 set noerrorbells              " no error bells please

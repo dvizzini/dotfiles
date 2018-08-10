@@ -372,3 +372,4 @@ if version >= 508 || !exists("did_python_syn_inits")
 endif
 
 let b:current_syntax = "python"
+set shiftwidth=4

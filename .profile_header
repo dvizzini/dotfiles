@@ -50,4 +50,9 @@ export HISTSIZE=10000
 shopt -s histappend
 
 #PREVENT OBSENETIES
-set -o noclobber
+current_branch() {
+    git branch > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        echo "($(git branch 2>/dev/null | grep ^* | awk '{print $2}')) "
+    fi
+}
