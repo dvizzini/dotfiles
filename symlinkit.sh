@@ -18,8 +18,9 @@ else
     [ ! -f ~/.dircolors ] && ln -sn $PWD/.dircolors ~/.dircolors
 fi
 
+echo >> ~/.profile
 echo "_PS1=\"\[\e[01;32m\]$1:\[\e[01;34m\]\w\[\e[01;35m\]\[\033[00m\] $ \"" >> ~/.profile
-echo 'export PS1="\[\e[0;35m\]$(current_branch)$_PS1"' >> ~/.profile
+echo 'export PS1="\[\e[0;35m\]\$(current_branch)$_PS1"' >> ~/.profile
 
 [ ! -f ~/.vim ] && ln -sn $PWD/.vim ~/.vim
 [ ! -f ~/.vimrc ] && ln -sn $PWD/.vimrc ~/.vimrc
