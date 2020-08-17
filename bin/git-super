@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+
+import argparse
+import os
+import subprocess
+import sys
+
+CWD = os.getcwd()
+
+
+def _full_path(basename):
+    return os.path.join(CWD, basename)
+
+
+def main(git_args):
+    subdirs = [_full_path(d) for d in os.listdir(CWD) if os.path.isdir(_full_path(d))]
+
+    for d in subdirs:
+        is_git_repo = '.git' in os.listdir(d)
+        if is_git_repo:
+            os.chdir(d)
+            try:
+                git_output = subprocess.check_output('git {0}'.format(git_args), shell=True)
+                for line in git_output.strip().decode().split('\n'):
+                    print("{d}:{line}".format(d=d, line=line.strip()))
+            except Exception:
+                pass
+
+    os.chdir(CWD)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="will run a git in all git repos imediately under current working directory")
+    parser.add_argument(
+        'git_args',
+        nargs='+',
+        help='''
+This script will run `git <git_args>` within each subdirectory that is a git repo.
+e.g. grep -i persisted, branch
+''',
+    )
+    parser.parse_known_args()  # only for help
+
+    git_args = " ".join(sys.argv[1:])
+
+    main(git_args)
