@@ -56,3 +56,5 @@ current_branch() {
         echo "($(git branch 2>/dev/null | grep ^* | awk '{print $2}')) "
     fi
 }
+
+eval "$(pyenv init -)"
