@@ -16,7 +16,11 @@ def main(git_args):
     subdirs = [_full_path(d) for d in os.listdir(CWD) if os.path.isdir(_full_path(d))]
 
     for d in subdirs:
-        is_git_repo = '.git' in os.listdir(d)
+        is_git_repo = False
+        try:
+            is_git_repo = '.git' in os.listdir(d)
+        except Exception:
+            pass
         if is_git_repo:
             os.chdir(d)
             try:
