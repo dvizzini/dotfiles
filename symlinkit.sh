@@ -53,7 +53,11 @@ then
     brew install coreutils
     brew install wget
     brew install pyenv
+    brew install awscli
 
+    pyenv install 3.8.6
+    pyenv global 3.8.6
+    eval "$(pyenv init -)"
 else
     sudo apt-get -y install python-pip
     sudo apt-get -y install wget
