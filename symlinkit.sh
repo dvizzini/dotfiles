@@ -54,6 +54,7 @@ then
     brew install wget
     brew install pyenv
     brew install awscli
+    brew install htop
 
     pyenv install 3.8.6
     pyenv global 3.8.6
