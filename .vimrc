@@ -229,7 +229,7 @@ cmap w!! w !sudo tee %
 " Fix the # at the start of the line
 inoremap # X<BS>#
 " When I forget I'm in Insert mode, how often do you type 'jj' anyway?:
-imap jj <Esc>
+" imap jj <Esc>
 
 " ---------------------------------------------------------------------------
       autocmd BufReadPost *
@@ -276,4 +276,4 @@ set number
 
 " Disable the one PEP8 rule that should not be
 let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501,E225'
+let g:syntastic_python_flake8_args='--ignore=E501,E225,W503'
