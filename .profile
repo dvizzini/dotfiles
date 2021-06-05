@@ -57,5 +57,23 @@ current_branch() {
     fi
 }
 
-# for pyenv
 eval "$(pyenv init -)"
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
+export PATH="$HOME/miniconda3/bin:$PATH"
+
+# To line up with linux
+alias ll="ls -laF"
+
+# free up ^s
+stty -ixon
+
+_PS1="\[\e[01;32m\]mac:\[\e[01;34m\]\w\[\e[01;35m\]\[\033[00m\] $ "
+export PS1="\[\e[0;35m\]\$(current_branch)$_PS1"
+
+alias hstart="/usr/local/Cellar/hadoop/3.3.0/sbin/start-all.sh"
+alias hstop="/usr/local/Cellar/hadoop/3.3.0/sbin/stop-all.sh"
