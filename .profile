@@ -1,3 +1,5 @@
+source  ~/.bash_profile
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -56,8 +58,6 @@ current_branch() {
         echo "($(git branch 2>/dev/null | grep ^* | awk '{print $2}')) "
     fi
 }
-
-eval "$(pyenv init -)"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then

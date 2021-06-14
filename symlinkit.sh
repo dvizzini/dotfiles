@@ -5,7 +5,7 @@ PWD=`pwd`
 ln -s /usr/local/bin/gtac /usr/local/bin/tac
 
 [ ! -d ~/.vim ] && ln -sn $PWD/.vim ~/.vim
-[ ! -f ~/.profile ] && ln -sn $PWD/.profile ~/profile.
+[ ! -f ~/.profile ] && ln -sn $PWD/.profile ~/.profile
 [ ! -f ~/.vimrc ] && ln -sn $PWD/.vimrc ~/.vimrc
 [ ! -f ~/.gitignore_global ] && ln -sn $PWD/.gitignore_global ~/.gitignore_global
 [ ! -f ~/.screenrc ] && ln -sn $PWD/.screenrc ~/.screenrc
@@ -32,14 +32,13 @@ sudo easy_install pip
 brew update
 brew install coreutils
 brew install wget
-brew install pyenv
 brew install awscli
 brew install htop
 brew install jq
+brew install bazelisk
+brew install --cask miniconda
 
-pyenv install 3.8.6
-pyenv global 3.8.6
-eval "$(pyenv init -)"
+conda config --add channels conda-forge
 
 # get flake8 for sytastic
 sudo pip install flake8
