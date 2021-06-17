@@ -1,10 +1,12 @@
-source  ~/.bash_profile
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
         . "$HOME/.bashrc"
+    fi
+
+    if [ -f "$HOME/.bash_profile" ]; then
+        . "$HOME/.bash_profile"
     fi
 
     # include .bash_aliases if it exists
@@ -21,30 +23,6 @@ if [ -n "$BASH_VERSION" ]; then
         . "$HOME/git-completion.bash"
     fi
 fi
-
-# money adddition from Volkan
-for i in `ls $HOME`
-do
-  if [ -d "$HOME/$i/current/bin" ]; then
-    export PATH=$HOME/$i/current/bin:$PATH
-  fi
-
-  if [ -d "$HOME/$i/current/sbin" ]; then
-    export PATH=$HOME/$i/current/sbin:$PATH
-  fi
-
-  if [ -d "$HOME/$i/current/lib" ]; then
-    export LD_LIBRARY_PATH=$HOME/$i/current/lib:$LD_LIBRARY_PATH
-  fi
-
-  if [ -d "$HOME/$i/current/lib" ]; then
-    export DYLD_LIBRARY_PATH=$HOME/$i/current/lib:$DYLD_LIBRARY_PATH
-  fi
-
-  if [ -d "$HOME/$i/current/man" ]; then
-    export MANPATH=$HOME/$i/current/man:$MANPATH
-  fi
-done
 
 #BASH HISTORY MODS
 export HISTCONTROL=erasedups
