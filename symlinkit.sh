@@ -23,6 +23,7 @@ sudo easy_install pip
 brew update
 brew install coreutils
 brew install wget
+brew install htop
 brew install awscli
 brew install htop
 brew install jq
