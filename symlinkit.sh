@@ -10,21 +10,12 @@ ln -s /usr/local/bin/gtac /usr/local/bin/tac
 [ ! -f ~/.gitignore_global ] && ln -sn $PWD/.gitignore_global ~/.gitignore_global
 [ ! -f ~/.screenrc ] && ln -sn $PWD/.screenrc ~/.screenrc
 [ ! -f ~/.bash_aliases ] && ln -sn $PWD/.bash_aliases ~/.bash_aliases
+[ ! -f ~/.gitconfig ] && ln -sn $PWD/.gitconfig ~/.gitconfig
 
 mkdir -p $HOME/bin
 for file in $(ls $PWD/bin); do
     [ ! -f ~/bin/$file ] && ln -sn $PWD/bin/$file ~/bin/
 done
-
-# git config
-git config --global core.autocrlf false
-git config --global user.name "Daniel Vizzini"
-git config --global user.email daniel.vizzini@disneystreaming.com
-git config --global core.excludesfile "~/.gitignore_global"
-git config --global alias.lg "log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
-git config --global alias.glol "log --all --color --graph --pretty=format:'%Cred%h%Creset%x09%C(yellow)%d%Creset %s %C(cyan)(%cr) %C(blue)[%an]%Creset' --abbrev-commit"
-git config --global alias.df "diff --color-words"
-git config --global color.ui "true"
 
 # get brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

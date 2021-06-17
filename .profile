@@ -65,6 +65,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export PATH="$HOME/miniconda3/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # To line up with linux
 alias ll="ls -laF"
@@ -77,3 +78,6 @@ export PS1="\[\e[0;35m\]\$(current_branch)$_PS1"
 
 alias hstart="/usr/local/Cellar/hadoop/3.3.0/sbin/start-all.sh"
 alias hstop="/usr/local/Cellar/hadoop/3.3.0/sbin/stop-all.sh"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
