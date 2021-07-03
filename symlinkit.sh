@@ -33,6 +33,7 @@ brew install --cask miniconda
 conda config --add channels conda-forge
 
 # get flake8 for sytastic
+pip install flake8
 sudo pip install flake8
 
 # git auto-complete

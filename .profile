@@ -22,6 +22,19 @@ if [ -n "$BASH_VERSION" ]; then
     if [ -f "$HOME/git-completion.bash" ]; then
         . "$HOME/git-completion.bash"
     fi
+
+    if [ -d "/opt/homebrew/bin" ] ; then
+        export PATH="/opt/homebrew/bin:$PATH"
+    fi
+
+    if [ -d "$HOME/bin" ] ; then
+        export PATH="$HOME/bin:$PATH"
+    fi
+
+    if [ -f "$HOME/.company_specific" ]; then
+        . "$HOME/.company_specific"
+    fi
+
 fi
 
 #BASH HISTORY MODS
@@ -36,11 +49,6 @@ current_branch() {
         echo "($(git branch 2>/dev/null | grep ^* | awk '{print $2}')) "
     fi
 }
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    export PATH="$HOME/bin:$PATH"
-fi
 
 export PATH="$HOME/miniconda3/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
