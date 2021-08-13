@@ -67,3 +67,5 @@ alias hstop="/usr/local/Cellar/hadoop/3.3.0/sbin/stop-all.sh"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+
+export QT_MAC_WANTS_LAYER=1
