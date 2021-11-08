@@ -28,6 +28,7 @@ brew install awscli
 brew install htop
 brew install jq
 brew install bazelisk
+brew install vim
 brew install --cask miniconda
 
 conda config --add channels conda-forge
