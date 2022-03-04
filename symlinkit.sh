@@ -30,12 +30,9 @@ brew install jq
 brew install bazelisk
 brew install vim
 brew install --cask miniconda
+brew install flake8
 
 conda config --add channels conda-forge
-
-# get flake8 for sytastic
-pip install flake8
-sudo pip install flake8
 
 # git auto-complete
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
