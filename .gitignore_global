@@ -50,3 +50,5 @@ vizzini*
 *.TRASH
 venv
 metastore_db
+
+.idea
