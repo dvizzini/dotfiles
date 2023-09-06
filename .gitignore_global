@@ -49,7 +49,7 @@ Thumbs.db
 #########################
 vizzini*
 *.TRASH
-venv
+/venv
 metastore_db
 
 .idea

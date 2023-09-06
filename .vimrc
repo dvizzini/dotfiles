@@ -277,3 +277,5 @@ set number
 " Disable the one PEP8 rule that should not be
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,W503,W504,E127,E722,E251,E203'
+
+set spell spelllang=en_us
