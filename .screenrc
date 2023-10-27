@@ -1,7 +1,6 @@
 # GNU Screen - main configuration file
 # All other .screenrc files will source this file to inherit settings.
 # Author: Christian Wills - cwills.sys@gmail.com
-
 # Allow bold colors - necessary for some reason
 attrcolor b ".I"
 
@@ -38,3 +37,5 @@ startup_message off           # default: on
 # From mysterious old .screenrc
 encoding UTF-8
 altscreen on
+
+defshell -bash
