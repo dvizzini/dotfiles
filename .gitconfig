@@ -3,7 +3,7 @@
 	excludesfile = ~/.gitignore_global
 [user]
 	name = Daniel Vizzini
-	email = dvizzini@gmail.com
+	email = dvizzini@etsy.com
 [alias]
 	lg = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	glol = log --all --color --graph --pretty=format:'%Cred%h%Creset%x09%C(yellow)%d%Creset %s %C(cyan)(%cr) %C(blue)[%an]%Creset' --abbrev-commit
