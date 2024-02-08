@@ -16,6 +16,6 @@
 [color]
 	ui = true
 [commit]
-  gpgsign = true
+	gpgsign = true
 [push]
-  autoSetupRemote = true
+	autoSetupRemote = true
